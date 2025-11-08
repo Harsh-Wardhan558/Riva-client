@@ -1,0 +1,15 @@
+﻿# Ignore common files
+node_modules/
+.env
+*.log
+.git/
+.gitignore
+README.md
+DEPLOYMENT.md
+EMAIL_SETUP.md
+FIRESTORE_SETUP.md
+get-firebase-credentials.md
+.firebase
+
+# DO NOT ignore firebase-service-account.json - it's needed in the container
+# (gcloudignore uses gitignore syntax, so we need to explicitly include it)

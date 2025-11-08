@@ -1,0 +1,15 @@
+node_modules
+npm-debug.log
+.env
+.env.local
+*.log
+.git
+.gitignore
+README.md
+DEPLOYMENT.md
+EMAIL_SETUP.md
+FIRESTORE_SETUP.md
+get-firebase-credentials.md
+.firebase
+# Include firebase-service-account.json in Docker build
+!firebase-service-account.json
