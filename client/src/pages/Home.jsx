@@ -32,18 +32,82 @@ const Home = () => {
       }
     }
   }
+  const profileCards = [
+    {
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      role: 'Waiter',
+      bgColor: '#FFD700',
+      tagColor: '#90EE90',
+      position: 'top-left',
+      size: 'medium'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      role: 'Finance',
+      bgColor: '#FFB6C1',
+      tagColor: '#FFD700',
+      position: 'top-right',
+      size: 'medium'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      role: 'Assistant',
+      bgColor: '#87CEEB',
+      tagColor: '#87CEEB',
+      position: 'bottom-left',
+      size: 'small'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      role: 'Cleaner',
+      bgColor: '#FFA500',
+      tagColor: '#FFA500',
+      position: 'bottom-right',
+      size: 'medium'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      role: 'Painter',
+      bgColor: '#D2B48C',
+      tagColor: '#FFFFFF',
+      position: 'mid-left',
+      size: 'small'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      role: 'Nurse',
+      bgColor: '#DDA0DD',
+      tagColor: '#DDA0DD',
+      position: 'mid-right',
+      size: 'medium'
+    }
+  ]
+
   return (
     <div className="home">
       <section className="hero">
         <div className="hero-background"></div>
         <div className="hero-overlay"></div>
         <div className="hero-container">
-          <div className="hero-content">
-            <div className="hero-rating">
-              <span className="rating-number">4.9</span>
-              <span className="rating-star">★</span>
-              <span className="rating-text">on Trustpilot</span>
+          {/* Profile Cards positioned around */}
+          {profileCards.map((card, index) => (
+            <div key={index} className={`hero-profile-card hero-profile-${card.position} hero-profile-${card.size}`}>
+              <div className="hero-profile-image-wrapper" style={{ backgroundColor: card.bgColor }}>
+                <img src={card.image} alt={card.role} className="hero-profile-image" />
+              </div>
+              <div 
+                className="hero-profile-role-tag" 
+                style={{ 
+                  backgroundColor: card.tagColor,
+                  color: card.tagColor === '#FFFFFF' || card.tagColor === '#ffffff' ? '#1a3d2e' : '#1a3d2e'
+                }}
+              >
+                {card.role}
+              </div>
             </div>
+          ))}
+          
+          <div className="hero-content">
             <h1 className="hero-title">
               Beyond Solutions, We Build Success – 
               Partnering in Your Growth Journey
@@ -52,7 +116,15 @@ const Home = () => {
               We unite Technology, Talent, and Opportunities to align your career 
               goals with the perfect job match.
             </p>
-            <Link to="/jobs" className="btn-hero-cta">See Us in Action</Link>
+            <div className="hero-buttons">
+              <Link to="/jobs" className="btn-hero-primary">
+                Find Works
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+              <Link to="/register" className="btn-hero-secondary">Hire Talents Now</Link>
+            </div>
           </div>
         </div>
       </section>
