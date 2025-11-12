@@ -54,7 +54,7 @@ const Home = () => {
       role: 'Assistant',
       bgColor: '#87CEEB',
       tagColor: '#87CEEB',
-      position: 'bottom-left',
+      position: 'mid-left',
       size: 'small'
     },
     {
@@ -62,15 +62,15 @@ const Home = () => {
       role: 'Cleaner',
       bgColor: '#FFA500',
       tagColor: '#FFA500',
-      position: 'bottom-right',
-      size: 'medium'
+      position: 'mid-right',
+      size: 'small'
     },
     {
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
       role: 'Painter',
       bgColor: '#D2B48C',
       tagColor: '#FFFFFF',
-      position: 'mid-left',
+      position: 'bottom-left',
       size: 'small'
     },
     {
@@ -78,7 +78,7 @@ const Home = () => {
       role: 'Nurse',
       bgColor: '#DDA0DD',
       tagColor: '#DDA0DD',
-      position: 'mid-right',
+      position: 'bottom-right',
       size: 'medium'
     }
   ]
