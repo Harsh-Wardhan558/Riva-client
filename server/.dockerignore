@@ -11,5 +11,6 @@ EMAIL_SETUP.md
 FIRESTORE_SETUP.md
 get-firebase-credentials.md
 .firebase
-# Include firebase-service-account.json in Docker build
-!firebase-service-account.json
+# SECURITY: Never include service account file in Docker builds
+# Use environment variables instead
+firebase-service-account.json

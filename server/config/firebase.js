@@ -10,23 +10,11 @@ const initializeFirebase = () => {
   }
 
   try {
-    const fs = require('fs');
-    // Try to use service account file first
-    const serviceAccountPath = path.join(__dirname, '../firebase-service-account.json');
-    
-    console.log('Looking for Firebase credentials at:', serviceAccountPath);
-    console.log('File exists:', fs.existsSync(serviceAccountPath));
-    
-    if (fs.existsSync(serviceAccountPath)) {
-      console.log('Loading Firebase credentials from file...');
-      const serviceAccount = require(serviceAccountPath);
-      admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
-        storageBucket: serviceAccount.project_id ? `${serviceAccount.project_id}.appspot.com` : `${process.env.FIREBASE_PROJECT_ID || 'riva-scientific'}.appspot.com`
-      });
-    } else if (process.env.FIREBASE_PRIVATE_KEY && process.env.FIREBASE_CLIENT_EMAIL) {
+    // SECURITY: Always use environment variables in production
+    // Never use service account files in production
+    if (process.env.FIREBASE_PRIVATE_KEY && process.env.FIREBASE_CLIENT_EMAIL) {
       console.log('Loading Firebase credentials from environment variables...');
-      // Use environment variables
+      // Use environment variables (preferred method)
       admin.initializeApp({
         credential: admin.credential.cert({
           projectId: process.env.FIREBASE_PROJECT_ID || 'riva-scientific',
@@ -35,15 +23,28 @@ const initializeFirebase = () => {
         }),
         storageBucket: `${process.env.FIREBASE_PROJECT_ID || 'riva-scientific'}.appspot.com`
       });
-    } else {
-      const errorMsg = 'Firebase credentials not found. Please set up firebase-service-account.json or environment variables.';
-      console.error('❌', errorMsg);
-      // In production, we might want to continue without Firebase for health checks
-      if (process.env.NODE_ENV === 'production') {
-        console.warn('⚠️  Continuing without Firebase (health check may still work)');
-        return null;
+    } else if (process.env.NODE_ENV !== 'production') {
+      // Only allow file-based auth in development
+      const fs = require('fs');
+      const serviceAccountPath = path.join(__dirname, '../firebase-service-account.json');
+      
+      if (fs.existsSync(serviceAccountPath)) {
+        console.log('⚠️  Loading Firebase credentials from file (development only)...');
+        const serviceAccount = require(serviceAccountPath);
+        admin.initializeApp({
+          credential: admin.credential.cert(serviceAccount),
+          storageBucket: serviceAccount.project_id ? `${serviceAccount.project_id}.appspot.com` : `${process.env.FIREBASE_PROJECT_ID || 'riva-scientific'}.appspot.com`
+        });
+      } else {
+        const errorMsg = 'Firebase credentials not found. Please set environment variables (FIREBASE_PRIVATE_KEY, FIREBASE_CLIENT_EMAIL, FIREBASE_PROJECT_ID).';
+        console.error('❌', errorMsg);
+        throw new Error(errorMsg);
       }
-      throw new Error(errorMsg);
+    } else {
+      const errorMsg = 'Firebase credentials not found. Please set environment variables (FIREBASE_PRIVATE_KEY, FIREBASE_CLIENT_EMAIL, FIREBASE_PROJECT_ID).';
+      console.error('❌', errorMsg);
+      console.warn('⚠️  Continuing without Firebase (health check may still work)');
+      return null;
     }
 
     initialized = true;
