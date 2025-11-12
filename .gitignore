@@ -10,26 +10,74 @@ node_modules/
 /build
 /dist
 
-# Environment variables
+# ============================================
+# SECURITY - CREDENTIALS & SENSITIVE FILES
+# ============================================
+# Environment variables (CRITICAL - Never commit!)
 .env
+.env.*
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env.development
+.env.production
+.env.staging
+*.env
+!.env.example
 
-# Firebase Service Account (CRITICAL - Never commit this!)
+# Firebase Service Account & Credentials (CRITICAL - Never commit!)
 **/firebase-service-account.json
 server/firebase-service-account.json
 firebase-service-account.json
 *.service-account.json
+firebase-adminsdk-*.json
+*-firebase-adminsdk-*.json
+**/firebase-credentials.json
+**/firebase-config.json
+**/google-services.json
+**/GoogleService-Info.plist
 
-# Logs
+# API Keys & Secrets
+**/secrets/
+**/secrets.json
+**/config/secrets.js
+**/config/secrets.json
+**/api-keys.json
+**/credentials.json
+**/*-key.json
+**/*-keys.json
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+
+# Database credentials
+**/database-credentials.json
+**/db-config.json
+**/mongodb-uri.txt
+**/postgres-credentials.json
+
+# OAuth & Authentication
+**/oauth-credentials.json
+**/auth-config.json
+**/jwt-secret.txt
+
+# Cloud Provider Credentials
+**/gcp-credentials.json
+**/aws-credentials.json
+**/azure-credentials.json
+**/.aws/
+**/.gcloud/
+
+# Logs (may contain sensitive info)
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+pnpm-debug.log*
 
 # OS
 .DS_Store
@@ -39,22 +87,47 @@ lerna-debug.log*
 .Trashes
 ehthumbs.db
 Thumbs.db
+Desktop.ini
 
-# IDE
+# IDE & Editor files (may contain workspace settings)
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
 
 # Temporary files
 *.tmp
 *.temp
+*.bak
+*.backup
+*.old
 
 # Build outputs
 *.map
+sourcemaps/
 
-# Misc
+# Cache
 .cache/
 .temp/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
 
+# Package manager locks (optional - some teams commit these)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Misc
+*.pid
+*.seed
+*.pid.lock
+coverage/
+.nyc_output/
