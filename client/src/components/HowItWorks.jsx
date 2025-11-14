@@ -4,6 +4,7 @@ import AnimatedIcon from './AnimatedIcon'
 
 const HowItWorks = () => {
   const [activeTab, setActiveTab] = useState('talents')
+  const [activeStep, setActiveStep] = useState(null)
 
   const talentsSteps = [
     {
@@ -74,7 +75,11 @@ const HowItWorks = () => {
 
         <div className="steps-grid">
           {steps.map((step, index) => (
-            <div key={index} className="step-card">
+            <div 
+              key={index} 
+              className={`step-card ${activeStep === index ? 'active' : ''}`}
+              onClick={() => setActiveStep(activeStep === index ? null : index)}
+            >
               <div className="step-number-circle">
                 <span className="step-number">{step.number}</span>
               </div>

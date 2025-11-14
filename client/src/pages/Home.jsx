@@ -5,6 +5,7 @@ import IndustriesSection from '../components/IndustriesSection'
 import HowItWorks from '../components/HowItWorks'
 import LatestNews from '../components/LatestNews'
 import ContactForm from '../components/ContactForm'
+import PartnersSection from '../components/PartnersSection'
 import AnimatedIcon from '../components/AnimatedIcon'
 import './Home.css'
 
@@ -15,20 +16,30 @@ const Home = () => {
   const handlePlay = () => {
     const video = document.querySelector('.video-player')
     if (video) {
-      video.play()
-      setIsPlaying(true)
+      video.play().then(() => {
+        setIsPlaying(true)
+      }).catch((error) => {
+        console.error('Error playing video:', error)
+      })
     }
   }
 
-  const handleVideoClick = () => {
+  const handleVideoClick = (e) => {
     const video = document.querySelector('.video-player')
-    if (video) {
+    const overlay = e.currentTarget.querySelector('.video-overlay')
+    
+    // Don't toggle if clicking on the play button
+    if (e.target.closest('.play-button')) {
+      return
+    }
+    
+    if (video && overlay) {
       if (video.paused) {
-        video.play()
-        setIsPlaying(true)
-      } else {
-        video.pause()
-        setIsPlaying(false)
+        video.play().then(() => {
+          setIsPlaying(true)
+        }).catch((error) => {
+          console.error('Error playing video:', error)
+        })
       }
     }
   }
@@ -129,20 +140,25 @@ const Home = () => {
         </div>
       </section>
 
+      <PartnersSection />
+
       <section className="video-section">
         <div className="container">
           <div className="video-content-grid">
             <div className="video-column">
               <div className="video-frame-wrapper">
                 <div className="video-frame-layer"></div>
+                <div className="video-frame-layer-2"></div>
                 <div className="video-container" onClick={handleVideoClick}>
                   <video 
                     className="video-player" 
                     poster="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
                     controls={isPlaying}
+                    controlsList="nodownload"
                     preload="metadata"
                     onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
+                    playsInline
                   >
                     <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -152,9 +168,10 @@ const Home = () => {
                       <div className="play-button-container">
                         <div className="play-ripple-outer"></div>
                         <div className="play-ripple-inner"></div>
-                        <button className="play-button" onClick={handlePlay} aria-label="Play video">
-                          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 18L22 42L42 30L22 18Z" fill="#00ff88"/>
+                        <button className="play-button" onClick={(e) => { e.stopPropagation(); handlePlay(); }} aria-label="Play video">
+                          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="40" fill="#00ff88" opacity="0.9"/>
+                            <path d="M32 28L32 52L52 40L32 28Z" fill="#1a3d2e"/>
                           </svg>
                         </button>
                       </div>
@@ -175,15 +192,19 @@ const Home = () => {
               </p>
               <ul className="video-section-features">
                 <li>
-                  <svg className="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.667 5L7.5 14.167L3.333 10" stroke="#00ff88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  <div className="check-icon">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.667 3.5L5.25 9.917L2.333 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                   <span>This helps businesses maintain service excellence</span>
                 </li>
                 <li>
-                  <svg className="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.667 5L7.5 14.167L3.333 10" stroke="#00ff88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  <div className="check-icon">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.667 3.5L5.25 9.917L2.333 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                   <span>This scalability allows businesses to adjust staffing</span>
                 </li>
               </ul>

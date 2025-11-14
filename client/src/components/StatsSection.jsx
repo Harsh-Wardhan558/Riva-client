@@ -1,13 +1,70 @@
+import { useState, useEffect, useRef } from 'react'
 import './StatsSection.css'
 
 const StatsSection = () => {
   console.log('StatsSection component rendered')
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef(null)
+
   const stats = [
-    { number: '12k', label: 'Freelance Workers' },
-    { number: '95%', label: 'Jobs Fulfillment Rate' },
-    { number: '12k+', label: 'Jobs Filled' },
-    { number: '825+', label: 'Satisfied Businesses' }
+    { number: 12, suffix: 'k', label: 'Freelance Workers', isKFormat: true },
+    { number: 95, suffix: '%', label: 'Jobs Fulfillment Rate', isKFormat: false },
+    { number: 12, suffix: 'k+', label: 'Jobs Filled', isKFormat: true },
+    { number: 825, suffix: '+', label: 'Satisfied Businesses', isKFormat: false }
   ]
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
+    }
+  }, [])
+
+  const CountUpNumber = ({ target, suffix, isVisible, isKFormat }) => {
+    const [count, setCount] = useState(0)
+    const duration = 2000 // 2 seconds
+    const steps = 60
+    const increment = target / steps
+    const stepDuration = duration / steps
+
+    useEffect(() => {
+      if (!isVisible) return
+
+      let currentStep = 0
+      const timer = setInterval(() => {
+        currentStep++
+        const nextValue = Math.min(Math.floor(increment * currentStep), target)
+        setCount(nextValue)
+
+        if (currentStep >= steps) {
+          setCount(target)
+          clearInterval(timer)
+        }
+      }, stepDuration)
+
+      return () => clearInterval(timer)
+    }, [isVisible, target, increment, steps, stepDuration])
+
+    return (
+      <span>
+        {count}{suffix}
+      </span>
+    )
+  }
 
   const flowingWords = [
     'Manufacturing',
@@ -25,12 +82,14 @@ const StatsSection = () => {
   ]
 
   return (
-    <section className="stats-section">
+    <section className="stats-section" ref={sectionRef}>
       <div className="container">
         <div className="stats-cards">
           {stats.map((stat, index) => (
             <div key={index} className="stat-card">
-              <h3 className="stat-number">{stat.number}</h3>
+              <h3 className="stat-number">
+                <CountUpNumber target={stat.number} suffix={stat.suffix} isVisible={isVisible} isKFormat={stat.isKFormat} />
+              </h3>
               <p className="stat-label">{stat.label}</p>
             </div>
           ))}
