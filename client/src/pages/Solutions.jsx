@@ -1,8 +1,44 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import AnimatedIcon from '../components/AnimatedIcon'
+import SubscribeSection from '../components/SubscribeSection'
 import './Solutions.css'
 
 const Solutions = () => {
+  const testimonials = [
+    {
+      id: 1,
+      text: "They kept informed at every stage of the task. Company was impressed by the personal approach of their recruitment team for the improvement.",
+      name: "Eoin Diarmuid",
+      role: "Art Director",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      id: 2,
+      text: "Company was impressed by the personal approach of their recruitment team for the improvement. They kept informed at every stage of the task.",
+      name: "Franklin Bailey",
+      role: "CEO, Riva",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      id: 3,
+      text: "The recruitment process was seamless and professional. Their team understood our needs and delivered exceptional candidates.",
+      name: "Sarah Johnson",
+      role: "HR Director",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    }
+  ]
+
+  const [currentTestimonial, setCurrentTestimonial] = useState(0)
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
+  }
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+  }
+
   const solutions = [
     {
       id: 1,
@@ -61,12 +97,15 @@ const Solutions = () => {
       {/* Solutions Grid */}
       <section className="solutions-grid-section">
         <div className="container">
+          <div className="solutions-header">
+            <span className="solutions-tag">WHAT WE PROVIDE</span>
+            <h2 className="solutions-main-title">Inspiring Staffing Solutions</h2>
+          </div>
           <div className="solutions-grid">
             {solutions.map((solution) => (
               <div key={solution.id} className="solution-card">
                 <div className="solution-image-wrapper">
                   <img src={solution.image} alt={solution.title} className="solution-image" />
-                  <div className="solution-overlay"></div>
                 </div>
                 <div className="solution-content">
                   <h3 className="solution-title">{solution.title}</h3>
@@ -122,49 +161,33 @@ const Solutions = () => {
       <section className="testimonial-section">
         <div className="container">
           <div className="testimonial-content">
-            <div className="quote-icon">66</div>
-            <div className="testimonial-main">
-              <p className="testimonial-text">
-                "Company was impressed by the personal approach of their recruitment team for the improvement. 
-                They kept informed at every stage of the task."
-              </p>
-              <div className="testimonial-author">
-                <img 
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
-                  alt="Franklin Bailey" 
-                  className="author-image"
-                />
-                <div className="author-info">
-                  <p className="author-name">Franklin Bailey</p>
-                  <p className="author-role">CEO, Riva</p>
-                </div>
-              </div>
+            <div className="testimonial-image-wrapper">
+              <img 
+                src={testimonials[currentTestimonial].image}
+                alt={testimonials[currentTestimonial].name}
+                className="author-image"
+                key={testimonials[currentTestimonial].id}
+              />
             </div>
-            <div className="testimonial-nav">
-              <button className="nav-arrow prev-arrow">←</button>
-              <button className="nav-arrow next-arrow">→</button>
+            <div className="testimonial-main">
+              <div className="quote-icon">66</div>
+              <p className="testimonial-text" key={`text-${testimonials[currentTestimonial].id}`}>
+                {testimonials[currentTestimonial].text}
+              </p>
+              <div className="testimonial-author" key={`author-${testimonials[currentTestimonial].id}`}>
+                <p className="author-name">{testimonials[currentTestimonial].name}</p>
+                <p className="author-role">{testimonials[currentTestimonial].role}</p>
+              </div>
+              <div className="testimonial-nav">
+                <button className="nav-arrow prev-arrow" onClick={prevTestimonial} aria-label="Previous testimonial">←</button>
+                <button className="nav-arrow next-arrow" onClick={nextTestimonial} aria-label="Next testimonial">→</button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Subscription Section */}
-      <section className="subscription-section">
-        <div className="container">
-          <div className="subscription-content">
-            <h3 className="subscription-title">Subscribe for latest update</h3>
-            <form className="subscription-form">
-              <input 
-                type="email" 
-                placeholder="Email Address" 
-                className="subscription-input"
-                required
-              />
-              <button type="submit" className="subscription-btn">Subscribe</button>
-            </form>
-          </div>
-        </div>
-      </section>
+      <SubscribeSection />
     </div>
   )
 }

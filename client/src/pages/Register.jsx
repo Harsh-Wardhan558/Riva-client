@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { authAPI } from '../services/api'
+import SubscribeSection from '../components/SubscribeSection'
 import './Register.css'
 
 const Register = () => {
@@ -55,12 +56,24 @@ const Register = () => {
 
   return (
     <div className="register-page">
-      <div className="register-container">
-        <div className="register-card">
-          <div className="register-header">
-            <h1>Create Account</h1>
-            <p>Join Riva Recruitment and start your journey</p>
+      <div className="register-header">
+        <div className="container">
+          <h1 className="register-title">Create Account</h1>
+          <div className="breadcrumbs">
+            <Link to="/" className="breadcrumb-link">Home</Link>
+            <span className="breadcrumb-separator">-</span>
+            <span>Create Account</span>
           </div>
+        </div>
+      </div>
+
+      <div className="register-content">
+        <div className="container">
+          <div className="register-card">
+            <div className="register-card-header">
+              <h2>Join Riva Recruitment</h2>
+              <p>Start your journey with us today</p>
+            </div>
 
           {error && <div className="error-message">{error}</div>}
 
@@ -178,8 +191,11 @@ const Register = () => {
               <button type="button" className="social-btn linkedin-btn">LinkedIn</button>
             </div>
           </div>
+          </div>
         </div>
       </div>
+
+      <SubscribeSection />
     </div>
   )
 }
