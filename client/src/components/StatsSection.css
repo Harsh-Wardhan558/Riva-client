@@ -70,12 +70,13 @@
 .flowing-banner-container {
   position: relative;
   margin-top: 3rem;
-  overflow: hidden;
+  overflow: visible;
+  padding-top: 30px;
 }
 
 .riva-badge-banner {
   position: absolute;
-  top: -25px;
+  top: -20px;
   left: 4rem;
   width: 50px;
   height: 50px;
@@ -91,7 +92,7 @@
   box-shadow: 0 4px 12px rgba(0, 255, 136, 0.4);
   transition: all 0.3s ease;
   aspect-ratio: 1 / 1;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .riva-badge-banner:hover {

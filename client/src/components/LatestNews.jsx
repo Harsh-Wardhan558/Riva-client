@@ -16,7 +16,7 @@ const LatestNews = () => {
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       date: 'March 18, 2023',
       title: 'Feature interviews with employees from top companies'
     }
