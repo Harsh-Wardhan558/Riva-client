@@ -1,0 +1,89 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Environment variables (CRITICAL - Never commit!)
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!.env.example
+
+# Firebase Service Account & Credentials (CRITICAL - Never commit!)
+firebase-service-account.json
+*.service-account.json
+firebase-adminsdk-*.json
+*-firebase-adminsdk-*.json
+firebase-credentials.json
+firebase-config.json
+config/firebase-credentials.json
+config/secrets.js
+config/secrets.json
+
+# API Keys & Secrets
+secrets/
+secrets.json
+api-keys.json
+credentials.json
+*-key.json
+*-keys.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Database credentials
+database-credentials.json
+db-config.json
+mongodb-uri.txt
+postgres-credentials.json
+
+# OAuth & Authentication
+oauth-credentials.json
+auth-config.json
+jwt-secret.txt
+
+# Cloud Provider Credentials
+gcp-credentials.json
+aws-credentials.json
+azure-credentials.json
+.aws/
+.gcloud/
+
+# Logs (may contain sensitive info)
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Uploads & User Data (if storing locally)
+uploads/
+user-uploads/
+temp-uploads/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Cache
+.cache/
+.temp/
+
