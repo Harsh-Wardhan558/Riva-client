@@ -1,0 +1,2348 @@
+.services-page {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.services-hero-section {
+  padding: 8rem 2rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.services-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.services-hero-label {
+  display: block;
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.services-hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.services-hero-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 600px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.services-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-btn-connect {
+  display: inline-block;
+  padding: 0.875rem 2.5rem;
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.services-btn-connect:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.services-btn-learn {
+  display: inline-block;
+  padding: 0.875rem 2.5rem;
+  background: white;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-btn-learn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.services-btn-learn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: right 0.4s ease;
+  z-index: 0;
+}
+
+.services-btn-learn:hover {
+  color: white;
+  border-color: #1a3d2e;
+  transform: translateY(-2px);
+}
+
+.services-btn-learn:hover span {
+  color: white;
+}
+
+.services-btn-learn:hover::before {
+  left: 0;
+}
+
+.services-btn-learn:hover::after {
+  right: 0;
+}
+
+.services-btn-learn span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+/* Services Grid Section */
+.services-grid-section {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.services-grid-header {
+  text-align: center;
+  max-width: 1600px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.services-grid-label {
+  display: block;
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.services-grid-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.services-grid-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Main Grid Layout */
+.services-grid {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-rows: auto auto;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Large Primary Card - Left Column */
+.services-card-large {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-card-large:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.services-card-image-wrapper {
+  width: 100%;
+  height: 350px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.services-card-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-card-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.services-card-category {
+  display: block;
+  color: #000;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.services-card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.services-card-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.services-card-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.services-btn-explore {
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.4s ease, border-color 0.4s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-btn-explore::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.services-btn-explore::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: right 0.4s ease;
+  z-index: 0;
+}
+
+.services-btn-explore span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+.services-btn-explore:hover {
+  color: white;
+  border-color: #1a3d2e;
+}
+
+.services-btn-explore:hover span {
+  color: white;
+}
+
+.services-btn-explore:hover::before {
+  left: 0;
+}
+
+.services-btn-explore:hover::after {
+  right: 0;
+}
+
+.services-btn-learn-more {
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.services-btn-learn-more:hover {
+  color: #4CAF50;
+}
+
+/* Right Column - Two Cards in One Row */
+.services-cards-stack {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.services-card-small {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-card-small:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.services-card-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.services-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.services-card-small-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.services-card-small-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+/* Bottom Right - Medium Wide Card */
+.services-card-medium {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-self: stretch;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-card-medium:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.services-card-medium-image-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-card-medium-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .services-hero-section {
+    padding: 6rem 2rem;
+    min-height: 60vh;
+  }
+
+  .services-hero-title {
+    font-size: 3rem;
+  }
+
+  .services-grid-section {
+    padding: 5rem 2rem;
+  }
+
+  .services-grid-title {
+    font-size: 3rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+  }
+
+  .services-card-large {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  .services-cards-stack {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .services-card-medium {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+
+  .services-card-image-wrapper {
+    height: 300px;
+  }
+
+  .services-card-content {
+    padding: 2rem;
+  }
+
+  .services-card-small {
+    padding: 2rem;
+  }
+
+  .services-card-medium-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero-section {
+    padding: 5rem 1.5rem;
+    min-height: 50vh;
+  }
+
+  .services-hero-content {
+    gap: 1.25rem;
+  }
+
+  .services-hero-label {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .services-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .services-hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .services-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .services-btn-connect,
+  .services-btn-learn {
+    width: 100%;
+    text-align: center;
+    padding: 0.875rem 2rem;
+  }
+
+  .services-grid-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .services-grid-header {
+    margin-bottom: 3rem;
+    gap: 0.75rem;
+  }
+
+  .services-grid-label {
+    font-size: 0.875rem;
+  }
+
+  .services-grid-title {
+    font-size: 2.5rem;
+  }
+
+  .services-grid-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .services-grid {
+    gap: 1.25rem;
+  }
+
+  .services-card-large {
+    min-height: auto;
+  }
+
+  .services-card-image-wrapper {
+    height: 250px;
+  }
+
+  .services-card-content {
+    padding: 1.75rem;
+    gap: 0.875rem;
+  }
+
+  .services-card-title {
+    font-size: 1.5rem;
+  }
+
+  .services-card-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .services-card-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .services-btn-explore {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .services-cards-stack {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem;
+  }
+
+  .services-card-small {
+    padding: 1.75rem;
+    gap: 0.875rem;
+  }
+
+  .services-card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+  }
+
+  .services-card-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .services-card-small-title {
+    font-size: 1.15rem;
+  }
+
+  .services-card-small-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .services-card-medium {
+    grid-template-columns: 1fr;
+  }
+
+  .services-card-medium-image-wrapper {
+    min-height: 200px;
+    order: -1;
+  }
+
+  .services-card-medium-content {
+    padding: 1.75rem;
+    gap: 0.875rem;
+  }
+
+  .services-card-medium-content .services-card-title {
+    font-size: 1.5rem;
+  }
+
+  .services-card-medium-content .services-card-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero-section {
+    padding: 4rem 1rem;
+    min-height: auto;
+  }
+
+  .services-hero-label {
+    font-size: 0.8rem;
+  }
+
+  .services-hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .services-hero-description {
+    font-size: 0.95rem;
+  }
+
+  .services-hero-buttons {
+    gap: 0.625rem;
+  }
+
+  .services-btn-connect,
+  .services-btn-learn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .services-grid-section {
+    padding: 3rem 1rem;
+  }
+
+  .services-grid-header {
+    margin-bottom: 2rem;
+    gap: 0.625rem;
+  }
+
+  .services-grid-label {
+    font-size: 0.8rem;
+  }
+
+  .services-grid-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .services-grid-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .services-grid {
+    gap: 1rem;
+  }
+
+  .services-card-image-wrapper {
+    height: 200px;
+  }
+
+  .services-card-content {
+    padding: 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .services-card-category {
+    font-size: 0.8rem;
+  }
+
+  .services-card-title {
+    font-size: 1.35rem;
+  }
+
+  .services-card-description {
+    font-size: 0.875rem;
+  }
+
+  .services-card-buttons {
+    gap: 0.625rem;
+  }
+
+  .services-btn-explore {
+    font-size: 0.9rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  .services-btn-learn-more {
+    font-size: 0.9rem;
+  }
+
+  .services-cards-stack {
+    gap: 1rem;
+  }
+
+  .services-card-small {
+    padding: 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .services-card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .services-card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .services-card-small-title {
+    font-size: 1.1rem;
+  }
+
+  .services-card-small-description {
+    font-size: 0.85rem;
+  }
+
+  .services-card-medium-image-wrapper {
+    min-height: 180px;
+  }
+
+  .services-card-medium-content {
+    padding: 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .services-card-medium-content .services-card-title {
+    font-size: 1.35rem;
+  }
+
+  .services-card-medium-content .services-card-description {
+    font-size: 0.875rem;
+  }
+}
+
+/* Section Divider */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: #e0e0e0;
+  margin: 0;
+}
+
+/* Specialized Talent Section */
+.specialized-talent-section {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.specialized-talent-grid {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.specialized-talent-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.specialized-talent-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.specialized-talent-number {
+  color: #999;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.specialized-talent-label {
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.specialized-talent-subtitle {
+  display: block;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.specialized-talent-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.specialized-talent-description {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 90%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.specialized-talent-buttons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.specialized-btn-explore {
+  padding: 0.875rem 2rem;
+  background: white;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.4s ease, border-color 0.4s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.specialized-btn-explore::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.specialized-btn-explore::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: right 0.4s ease;
+  z-index: 0;
+}
+
+.specialized-btn-explore span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+.specialized-btn-explore:hover {
+  color: white;
+  border-color: #1a3d2e;
+}
+
+.specialized-btn-explore:hover span {
+  color: white;
+}
+
+.specialized-btn-explore:hover::before {
+  left: 0;
+}
+
+.specialized-btn-explore:hover::after {
+  right: 0;
+}
+
+.specialized-btn-learn {
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.specialized-btn-learn:hover {
+  color: #4CAF50;
+}
+
+/* Image Placeholder */
+.specialized-talent-image-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.specialized-talent-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.specialized-talent-image-placeholder svg {
+  opacity: 0.5;
+}
+
+.specialized-image-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #999;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Responsive Styles for Specialized Talent Section */
+@media (max-width: 1024px) {
+  .specialized-talent-section {
+    padding: 5rem 2rem;
+  }
+
+  .specialized-talent-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .specialized-talent-content {
+    gap: 1.25rem;
+  }
+
+  .specialized-talent-title {
+    font-size: 2.75rem;
+  }
+
+  .specialized-talent-description {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .specialized-talent-image-wrapper {
+    order: -1;
+    min-height: 400px;
+  }
+
+  .specialized-talent-image-placeholder {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .specialized-talent-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .specialized-talent-grid {
+    gap: 2rem;
+  }
+
+  .specialized-talent-content {
+    gap: 1rem;
+  }
+
+  .specialized-talent-header {
+    margin-bottom: 0.25rem;
+  }
+
+  .specialized-talent-number,
+  .specialized-talent-label {
+    font-size: 0.875rem;
+  }
+
+  .specialized-talent-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .specialized-talent-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .specialized-talent-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .specialized-talent-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .specialized-btn-explore {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .specialized-btn-learn {
+    font-size: 0.9rem;
+  }
+
+  .specialized-talent-image-wrapper {
+    min-height: 300px;
+  }
+
+  .specialized-talent-image-placeholder {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .specialized-talent-section {
+    padding: 3rem 1rem;
+  }
+
+  .specialized-talent-grid {
+    gap: 1.5rem;
+  }
+
+  .specialized-talent-content {
+    gap: 0.875rem;
+  }
+
+  .specialized-talent-number,
+  .specialized-talent-label {
+    font-size: 0.8rem;
+  }
+
+  .specialized-talent-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .specialized-talent-title {
+    font-size: 2rem;
+  }
+
+  .specialized-talent-description {
+    font-size: 0.9rem;
+  }
+
+  .specialized-talent-buttons {
+    gap: 0.625rem;
+  }
+
+  .specialized-btn-explore {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .specialized-btn-learn {
+    font-size: 0.85rem;
+  }
+
+  .specialized-talent-image-wrapper {
+    min-height: 250px;
+  }
+
+  .specialized-talent-image-placeholder {
+    min-height: 250px;
+  }
+}
+
+/* Industry Expertise Section */
+.industry-expertise-section {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.industry-expertise-grid {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.industry-expertise-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.industry-expertise-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.industry-expertise-number {
+  color: #999;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.industry-expertise-label {
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.industry-expertise-subtitle {
+  display: block;
+  color: #999;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.industry-expertise-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.industry-expertise-description {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 90%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.industry-expertise-buttons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.industry-btn-discover {
+  padding: 0.875rem 2rem;
+  background: white;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.4s ease, border-color 0.4s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-btn-discover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.industry-btn-discover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: right 0.4s ease;
+  z-index: 0;
+}
+
+.industry-btn-discover span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+.industry-btn-discover:hover {
+  color: white;
+  border-color: #1a3d2e;
+}
+
+.industry-btn-discover:hover span {
+  color: white;
+}
+
+.industry-btn-discover:hover::before {
+  left: 0;
+}
+
+.industry-btn-discover:hover::after {
+  right: 0;
+}
+
+.industry-btn-connect {
+  padding: 0.875rem 2rem;
+  background: white;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.industry-btn-connect:hover {
+  color: #4CAF50;
+}
+
+/* Image Placeholder */
+.industry-expertise-image-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.industry-expertise-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.industry-expertise-image-placeholder svg {
+  opacity: 0.5;
+}
+
+.industry-image-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #999;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Responsive Styles for Industry Expertise Section */
+@media (max-width: 1024px) {
+  .industry-expertise-section {
+    padding: 5rem 2rem;
+  }
+
+  .industry-expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .industry-expertise-content {
+    gap: 1.25rem;
+  }
+
+  .industry-expertise-title {
+    font-size: 2.75rem;
+  }
+
+  .industry-expertise-description {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .industry-expertise-image-wrapper {
+    order: -1;
+    min-height: 400px;
+  }
+
+  .industry-expertise-image-placeholder {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .industry-expertise-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .industry-expertise-grid {
+    gap: 2rem;
+  }
+
+  .industry-expertise-content {
+    gap: 1rem;
+  }
+
+  .industry-expertise-header {
+    margin-bottom: 0.25rem;
+  }
+
+  .industry-expertise-number,
+  .industry-expertise-label {
+    font-size: 0.875rem;
+  }
+
+  .industry-expertise-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .industry-expertise-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .industry-expertise-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .industry-expertise-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .industry-btn-discover {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .industry-btn-connect {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .industry-expertise-image-wrapper {
+    min-height: 300px;
+  }
+
+  .industry-expertise-image-placeholder {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .industry-expertise-section {
+    padding: 3rem 1rem;
+  }
+
+  .industry-expertise-grid {
+    gap: 1.5rem;
+  }
+
+  .industry-expertise-content {
+    gap: 0.875rem;
+  }
+
+  .industry-expertise-number,
+  .industry-expertise-label {
+    font-size: 0.8rem;
+  }
+
+  .industry-expertise-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .industry-expertise-title {
+    font-size: 2rem;
+  }
+
+  .industry-expertise-description {
+    font-size: 0.9rem;
+  }
+
+  .industry-expertise-buttons {
+    gap: 0.625rem;
+  }
+
+  .industry-btn-discover {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .industry-btn-connect {
+    font-size: 0.85rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  .industry-expertise-image-wrapper {
+    min-height: 250px;
+  }
+
+  .industry-expertise-image-placeholder {
+    min-height: 250px;
+  }
+}
+
+/* Inspiring Staffing Solutions Section */
+.staffing-solutions-section {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.staffing-solutions-header {
+  text-align: center;
+  max-width: 1600px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.staffing-solutions-tag {
+  display: inline-block;
+  background: rgba(76, 175, 80, 0.12);
+  color: #4CAF50;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: fit-content;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.staffing-solutions-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.staffing-solutions-grid {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.staffing-solution-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.staffing-solution-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.staffing-solution-image-wrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.staffing-solution-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.staffing-solution-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.staffing-solution-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.staffing-solution-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.staffing-solution-btn {
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.4s ease, border-color 0.4s ease;
+  width: fit-content;
+  margin-top: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.staffing-solution-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.staffing-solution-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: right 0.4s ease;
+  z-index: 0;
+}
+
+.staffing-solution-btn:hover {
+  color: white;
+  border-color: #1a3d2e;
+}
+
+.staffing-solution-btn:hover span {
+  color: white;
+}
+
+.staffing-solution-btn:hover::before {
+  left: 0;
+}
+
+.staffing-solution-btn:hover::after {
+  right: 0;
+}
+
+.staffing-solution-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Styles for Staffing Solutions Section */
+@media (max-width: 1024px) {
+  .staffing-solutions-section {
+    padding: 5rem 2rem;
+  }
+
+  .staffing-solutions-header {
+    margin-bottom: 3rem;
+    gap: 0.75rem;
+  }
+
+  .staffing-solutions-title {
+    font-size: 3rem;
+  }
+
+  .staffing-solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .staffing-solution-content {
+    padding: 1.75rem;
+  }
+
+  .staffing-solution-title {
+    font-size: 1.35rem;
+  }
+
+  .staffing-solution-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .staffing-solutions-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .staffing-solutions-header {
+    margin-bottom: 2.5rem;
+    gap: 0.625rem;
+  }
+
+  .staffing-solutions-tag {
+    font-size: 0.7rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .staffing-solutions-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .staffing-solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .staffing-solution-image-wrapper {
+    height: 220px;
+  }
+
+  .staffing-solution-content {
+    padding: 1.5rem;
+    gap: 0.875rem;
+  }
+
+  .staffing-solution-title {
+    font-size: 1.25rem;
+  }
+
+  .staffing-solution-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .staffing-solution-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .staffing-solutions-section {
+    padding: 3rem 1rem;
+  }
+
+  .staffing-solutions-header {
+    margin-bottom: 2rem;
+    gap: 0.5rem;
+  }
+
+  .staffing-solutions-tag {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.875rem;
+  }
+
+  .staffing-solutions-title {
+    font-size: 2rem;
+  }
+
+  .staffing-solutions-grid {
+    gap: 1.25rem;
+  }
+
+  .staffing-solution-image-wrapper {
+    height: 200px;
+  }
+
+  .staffing-solution-content {
+    padding: 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .staffing-solution-title {
+    font-size: 1.15rem;
+  }
+
+  .staffing-solution-description {
+    font-size: 0.85rem;
+  }
+
+  .staffing-solution-btn {
+    padding: 0.625rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Approach Section */
+.approach-section {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.approach-header {
+  text-align: center;
+  max-width: 1600px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.approach-label {
+  display: block;
+  color: #999;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.approach-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.approach-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.approach-cards-grid {
+  max-width: 1800px;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  padding: 0;
+}
+
+.approach-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0;
+}
+
+.approach-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.approach-card-image-wrapper {
+  width: 100%;
+  height: 200px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.approach-card-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.approach-card-image-placeholder svg {
+  opacity: 0.5;
+}
+
+.approach-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.approach-card-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.approach-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.approach-btn-learn {
+  padding: 0.875rem 2rem;
+  background: white;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.4s ease, border-color 0.4s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.approach-btn-learn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.approach-btn-learn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: right 0.4s ease;
+  z-index: 0;
+}
+
+.approach-btn-learn:hover {
+  color: white;
+  border-color: #1a3d2e;
+}
+
+.approach-btn-learn:hover span {
+  color: white;
+}
+
+.approach-btn-learn:hover::before {
+  left: 0;
+}
+
+.approach-btn-learn:hover::after {
+  right: 0;
+}
+
+.approach-btn-learn span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+.approach-btn-connect {
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.approach-btn-connect:hover {
+  color: #4CAF50;
+}
+
+/* Responsive Styles for Approach Section */
+@media (max-width: 1024px) {
+  .approach-section {
+    padding: 5rem 2rem;
+  }
+
+  .approach-header {
+    margin-bottom: 3rem;
+    gap: 0.75rem;
+  }
+
+  .approach-title {
+    font-size: 3rem;
+  }
+
+  .approach-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .approach-card {
+    padding: 2rem;
+    gap: 1.25rem;
+  }
+
+  .approach-card-image-wrapper {
+    height: 180px;
+  }
+
+  .approach-card-title {
+    font-size: 1.35rem;
+  }
+
+  .approach-card-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .approach-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .approach-header {
+    margin-bottom: 2.5rem;
+    gap: 0.625rem;
+  }
+
+  .approach-label {
+    font-size: 0.875rem;
+  }
+
+  .approach-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .approach-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .approach-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .approach-card {
+    padding: 1.75rem;
+    gap: 1rem;
+  }
+
+  .approach-card-image-wrapper {
+    height: 160px;
+  }
+
+  .approach-card-title {
+    font-size: 1.25rem;
+  }
+
+  .approach-card-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .approach-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .approach-btn-learn {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .approach-btn-connect {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .approach-section {
+    padding: 3rem 1rem;
+  }
+
+  .approach-header {
+    margin-bottom: 2rem;
+    gap: 0.5rem;
+  }
+
+  .approach-label {
+    font-size: 0.8rem;
+  }
+
+  .approach-title {
+    font-size: 2rem;
+  }
+
+  .approach-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .approach-cards-grid {
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .approach-card {
+    padding: 1.5rem;
+    gap: 0.875rem;
+  }
+
+  .approach-card-image-wrapper {
+    height: 140px;
+  }
+
+  .approach-card-title {
+    font-size: 1.15rem;
+  }
+
+  .approach-card-description {
+    font-size: 0.85rem;
+  }
+
+  .approach-buttons {
+    gap: 0.625rem;
+    margin-top: 1.5rem;
+  }
+
+  .approach-btn-learn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .approach-btn-connect {
+    font-size: 0.85rem;
+  }
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 6rem 2rem;
+  background: #f5f7fa;
+}
+
+.cta-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cta-content {
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.cta-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.cta-description {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cta-btn-primary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #00b4a6 0%, #00897b 100%);
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.cta-btn-primary:hover {
+  background: linear-gradient(135deg, #00897b 0%, #00695c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 184, 166, 0.3);
+}
+
+.cta-btn-secondary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: white;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn-secondary:hover {
+  background: #1a3d2e;
+  color: white;
+  border-color: #1a3d2e;
+  transform: translateY(-2px);
+}
+
+.cta-image-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.cta-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive Styles for CTA Section */
+@media (max-width: 1024px) {
+  .cta-section {
+    padding: 5rem 2rem;
+  }
+
+  .cta-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-content {
+    padding: 3rem 2rem;
+    gap: 1.25rem;
+  }
+
+  .cta-heading {
+    font-size: 2.25rem;
+  }
+
+  .cta-description {
+    font-size: 1.05rem;
+  }
+
+  .cta-image-wrapper {
+    min-height: 300px;
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .cta-content {
+    padding: 2.5rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .cta-heading {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .cta-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .cta-btn-primary,
+  .cta-btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .cta-image-wrapper {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 3rem 1rem;
+  }
+
+  .cta-content {
+    padding: 2rem 1.25rem;
+    gap: 0.875rem;
+  }
+
+  .cta-heading {
+    font-size: 1.75rem;
+  }
+
+  .cta-description {
+    font-size: 0.95rem;
+  }
+
+  .cta-buttons {
+    gap: 0.625rem;
+  }
+
+  .cta-btn-primary,
+  .cta-btn-secondary {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .cta-image-wrapper {
+    min-height: 220px;
+  }
+}
+

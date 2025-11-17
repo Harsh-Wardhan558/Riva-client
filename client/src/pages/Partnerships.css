@@ -1,0 +1,1110 @@
+.partnerships-page {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.partnerships-hero-section {
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.partnerships-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.partnerships-hero-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.partnerships-hero-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partnerships-hero-label {
+  display: block;
+  color: #4CAF50;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.partnerships-hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.partnerships-hero-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 600px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.partnerships-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.partnerships-btn-primary {
+  display: inline-block;
+  padding: 0.875rem 2.5rem;
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.partnerships-btn-primary:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.partnerships-btn-secondary {
+  display: inline-block;
+  padding: 0.875rem 2.5rem;
+  background: white;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.partnerships-btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.partnerships-btn-secondary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50%;
+  width: 50%;
+  height: 100%;
+  background: #1a3d2e;
+  transition: right 0.4s ease;
+  z-index: 0;
+}
+
+.partnerships-btn-secondary:hover {
+  color: white;
+  border-color: #1a3d2e;
+  transform: translateY(-2px);
+}
+
+.partnerships-btn-secondary:hover span {
+  color: white;
+}
+
+.partnerships-btn-secondary:hover::before {
+  left: 0;
+}
+
+.partnerships-btn-secondary:hover::after {
+  right: 0;
+}
+
+.partnerships-btn-secondary span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+/* Collaboration Models Section */
+.collaboration-models-section {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.collaboration-models-header {
+  text-align: center;
+  max-width: 1600px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.collaboration-models-label {
+  display: block;
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.collaboration-models-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.collaboration-models-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.collaboration-models-grid {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.collaboration-model-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collaboration-model-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.collaboration-model-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.collaboration-model-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.collaboration-model-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.collaboration-model-link {
+  color: #4CAF50;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  margin-top: auto;
+}
+
+.collaboration-model-link:hover {
+  color: #45a049;
+}
+
+/* Partner Benefits Section */
+.partner-benefits-section {
+  padding: 6rem 2rem;
+  background: #f5f7fa;
+}
+
+.partner-benefits-header {
+  text-align: center;
+  max-width: 1600px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.partner-benefits-label {
+  display: block;
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.partner-benefits-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.partner-benefits-grid {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.partner-benefit-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.partner-benefit-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.partner-benefit-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.partner-benefit-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Industries Partner Section */
+.industries-partner-section {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.industries-partner-header {
+  text-align: center;
+  max-width: 1600px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.industries-partner-label {
+  display: block;
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.industries-partner-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.industries-partner-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.industries-partner-list {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.industry-partner-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.industry-partner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.industry-partner-image-wrapper {
+  width: 100%;
+  height: 200px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.industry-partner-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.industry-partner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.industry-partner-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.industry-partner-description {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Partnership Form Section */
+.partnership-form-section {
+  padding: 6rem 2rem;
+  background: #f5f7fa;
+}
+
+.partnership-form-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 4rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.partnership-form-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.partnership-form-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.partnership-form-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.partnership-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.875rem 1.25rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  transition: border-color 0.3s ease;
+  background: white;
+  color: #000;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.partnership-form-submit {
+  padding: 1rem 2.5rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  margin-top: 0.5rem;
+}
+
+.partnership-form-submit:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 6rem 2rem;
+  background: #f5f7fa;
+}
+
+.cta-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cta-content {
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.cta-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.cta-description {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.7;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cta-btn-primary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #00b4a6 0%, #00897b 100%);
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.cta-btn-primary:hover {
+  background: linear-gradient(135deg, #00897b 0%, #00695c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 184, 166, 0.3);
+}
+
+.cta-btn-secondary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: white;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.cta-btn-secondary:hover {
+  background: #1a3d2e;
+  color: white;
+  border-color: #1a3d2e;
+  transform: translateY(-2px);
+}
+
+.cta-image-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.cta-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .partnerships-hero-section {
+    padding: 6rem 2rem;
+    min-height: 60vh;
+  }
+
+  .partnerships-hero-title {
+    font-size: 3rem;
+  }
+
+  .collaboration-models-section,
+  .partner-benefits-section,
+  .industries-partner-section,
+  .partnership-form-section {
+    padding: 5rem 2rem;
+  }
+
+  .collaboration-models-title,
+  .partner-benefits-title,
+  .industries-partner-title {
+    font-size: 3rem;
+  }
+
+  .collaboration-models-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .partner-benefits-grid {
+    gap: 1.5rem;
+  }
+
+  .industry-partner-card {
+    grid-template-columns: 150px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .partnership-form-card {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .partnerships-hero-section {
+    padding: 5rem 1.5rem;
+    min-height: 50vh;
+  }
+
+  .partnerships-hero-content {
+    gap: 1.25rem;
+  }
+
+  .partnerships-hero-label {
+    font-size: 0.875rem;
+  }
+
+  .partnerships-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .partnerships-hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .partnerships-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 0.75rem;
+  }
+
+  .partnerships-btn-primary,
+  .partnerships-btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 0.875rem 2rem;
+  }
+
+  .collaboration-models-section,
+  .partner-benefits-section,
+  .industries-partner-section,
+  .partnership-form-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .collaboration-models-header,
+  .partner-benefits-header,
+  .industries-partner-header {
+    margin-bottom: 3rem;
+    gap: 0.75rem;
+  }
+
+  .collaboration-models-label,
+  .partner-benefits-label,
+  .industries-partner-label {
+    font-size: 0.875rem;
+  }
+
+  .collaboration-models-title,
+  .partner-benefits-title,
+  .industries-partner-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .collaboration-models-subtitle,
+  .industries-partner-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .collaboration-models-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .collaboration-model-card {
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .collaboration-model-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .collaboration-model-title {
+    font-size: 1.35rem;
+  }
+
+  .collaboration-model-description {
+    font-size: 0.9rem;
+  }
+
+  .partner-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .partner-benefit-card {
+    padding: 2rem;
+    gap: 0.875rem;
+  }
+
+  .partner-benefit-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .partner-benefit-title {
+    font-size: 1.35rem;
+  }
+
+  .partner-benefit-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .industry-partner-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem;
+  }
+
+  .industry-partner-image-wrapper {
+    height: 180px;
+    order: -1;
+  }
+
+  .industry-partner-title {
+    font-size: 1.5rem;
+  }
+
+  .industry-partner-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .partnership-form-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .partnership-form-title {
+    font-size: 2rem;
+  }
+
+  .partnership-form-subtitle {
+    font-size: 1rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .partnership-form {
+    gap: 1.25rem;
+  }
+
+  .cta-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .cta-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-content {
+    padding: 3rem 2rem;
+  }
+
+  .cta-image-wrapper {
+    min-height: 300px;
+    order: -1;
+  }
+
+  .cta-heading {
+    font-size: 2rem;
+  }
+
+  .cta-description {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-btn-primary,
+  .cta-btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .partnerships-hero-section {
+    padding: 4rem 1rem;
+    min-height: auto;
+  }
+
+  .partnerships-hero-label {
+    font-size: 0.8rem;
+  }
+
+  .partnerships-hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .partnerships-hero-description {
+    font-size: 0.95rem;
+  }
+
+  .partnerships-hero-buttons {
+    gap: 0.625rem;
+  }
+
+  .partnerships-btn-primary,
+  .partnerships-btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .collaboration-models-section,
+  .partner-benefits-section,
+  .industries-partner-section,
+  .partnership-form-section {
+    padding: 3rem 1rem;
+  }
+
+  .collaboration-models-header,
+  .partner-benefits-header,
+  .industries-partner-header {
+    margin-bottom: 2rem;
+    gap: 0.625rem;
+  }
+
+  .collaboration-models-label,
+  .partner-benefits-label,
+  .industries-partner-label {
+    font-size: 0.8rem;
+  }
+
+  .collaboration-models-title,
+  .partner-benefits-title,
+  .industries-partner-title {
+    font-size: 2rem;
+  }
+
+  .collaboration-models-subtitle,
+  .industries-partner-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .collaboration-models-grid {
+    gap: 1.25rem;
+  }
+
+  .collaboration-model-card {
+    padding: 1.5rem;
+    gap: 0.875rem;
+  }
+
+  .collaboration-model-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .collaboration-model-title {
+    font-size: 1.25rem;
+  }
+
+  .collaboration-model-description {
+    font-size: 0.875rem;
+  }
+
+  .partner-benefits-grid {
+    gap: 1.25rem;
+  }
+
+  .partner-benefit-card {
+    padding: 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .partner-benefit-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .partner-benefit-title {
+    font-size: 1.25rem;
+  }
+
+  .partner-benefit-description {
+    font-size: 0.875rem;
+  }
+
+  .industry-partner-card {
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .industry-partner-image-wrapper {
+    height: 160px;
+  }
+
+  .industry-partner-title {
+    font-size: 1.35rem;
+  }
+
+  .industry-partner-description {
+    font-size: 0.95rem;
+  }
+
+  .partnership-form-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .partnership-form-header {
+    margin-bottom: 2rem;
+    gap: 0.5rem;
+  }
+
+  .partnership-form-title {
+    font-size: 1.75rem;
+  }
+
+  .partnership-form-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .partnership-form {
+    gap: 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .partnership-form-submit {
+    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .cta-section {
+    padding: 3rem 1rem;
+  }
+
+  .cta-content {
+    padding: 2rem 1.25rem;
+    gap: 0.875rem;
+  }
+
+  .cta-heading {
+    font-size: 1.75rem;
+  }
+
+  .cta-description {
+    font-size: 0.95rem;
+  }
+
+  .cta-buttons {
+    gap: 0.625rem;
+  }
+
+  .cta-btn-primary,
+  .cta-btn-secondary {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .cta-image-wrapper {
+    min-height: 220px;
+  }
+}
+

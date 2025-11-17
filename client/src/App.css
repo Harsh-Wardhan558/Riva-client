@@ -7,5 +7,6 @@
 .main-content {
   flex: 1;
   width: 100%;
+  /* No padding-top initially - navbar is relative at top */
 }
 
