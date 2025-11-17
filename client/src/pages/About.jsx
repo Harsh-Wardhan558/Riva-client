@@ -1,8 +1,45 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect, useRef } from 'react'
 import AnimatedIcon from '../components/AnimatedIcon'
+import frameImage from '../images/Frame 1.png'
 import './About.css'
 
 const About = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [floatOffset, setFloatOffset] = useState(0)
+  const imageRef = useRef(null)
+  const wrapperRef = useRef(null)
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (wrapperRef.current) {
+        const rect = wrapperRef.current.getBoundingClientRect()
+        const centerX = rect.left + rect.width / 2
+        const centerY = rect.top + rect.height / 2
+        const x = (e.clientX - centerX) / rect.width
+        const y = (e.clientY - centerY) / rect.height
+        setMousePosition({ x, y })
+      }
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
+  useEffect(() => {
+    let animationFrame
+    let startTime = Date.now()
+
+    const animate = () => {
+      const elapsed = (Date.now() - startTime) / 1000
+      const offset = Math.sin(elapsed * 2) * 20 // Floating up and down
+      setFloatOffset(offset)
+      animationFrame = requestAnimationFrame(animate)
+    }
+
+    animate()
+    return () => cancelAnimationFrame(animationFrame)
+  }, [])
   const missionVisionValues = [
     {
       tag: 'OUR MISSION',
@@ -46,25 +83,100 @@ const About = () => {
 
   return (
     <div className="about-page">
-      {/* Hero Section - Same as Home Page */}
-      <section className="hero">
-        <div className="hero-background"></div>
-        <div className="hero-overlay"></div>
-        <div className="hero-container">
-          <div className="hero-content">
-            <div className="hero-rating">
-              <span className="rating-number">4.9</span>
-              <span className="rating-star">★</span>
-              <span className="rating-text">on Trustpilot</span>
+      {/* Hero Section - About Us Design */}
+      <section className="about-hero-section">
+        <div className="container">
+          <div className="about-hero-grid">
+            {/* Left Side - Image */}
+            <div className="about-hero-left">
+              <div 
+                className="about-hero-image-wrapper"
+                ref={wrapperRef}
+              >
+                <img 
+                  ref={imageRef}
+                  src={frameImage} 
+                  alt="About us" 
+                  className="about-hero-image"
+                  style={{
+                    transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20 + floatOffset}px)`
+                  }}
+                />
+              </div>
             </div>
-            <h1 className="hero-title">
-              About Riva Recruitment
-            </h1>
-            <p className="hero-subtitle">
-              Connecting talented professionals with exceptional opportunities. 
-              Learn more about our mission, vision, and the team behind Riva.
-            </p>
-            <Link to="/jobs" className="btn-hero-cta">Explore Our Jobs</Link>
+
+            {/* Right Side - Text and Features */}
+            <div className="about-hero-right">
+              <span className="about-hero-tag">ABOUT US</span>
+              <h1 className="about-hero-title">
+                The most loved <span className="about-hero-title-highlight">Agency</span>
+              </h1>
+              <p className="about-hero-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+              
+              {/* Feature Cards Grid */}
+              <div className="about-hero-features">
+                <div className="about-hero-feature-card">
+                  <div className="about-hero-feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Person with star badge */}
+                      <circle cx="12" cy="8" r="3" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <path d="M6 18v-1a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M12 6l1 2 2 0.5-1.5 1.5 0.5 2-2-1.5-2 1.5 0.5-2-1.5-1.5 2-0.5z" fill="white"/>
+                    </svg>
+                  </div>
+                  <div className="about-hero-feature-text">
+                    <div className="about-hero-feature-title">Easiest Admin</div>
+                    <div className="about-hero-feature-date">Fall 2023</div>
+                  </div>
+                </div>
+                
+                <div className="about-hero-feature-card">
+                  <div className="about-hero-feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Thumbs up */}
+                      <path d="M7 10v11M7 10l-4-1v6l4-1M7 10l5-1v6l-5-1M17 7v11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="white"/>
+                    </svg>
+                  </div>
+                  <div className="about-hero-feature-text">
+                    <div className="about-hero-feature-title">Users love Us</div>
+                    <div className="about-hero-feature-date">Winter 2023</div>
+                  </div>
+                </div>
+                
+                <div className="about-hero-feature-card">
+                  <div className="about-hero-feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Hand holding gear */}
+                      <path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <circle cx="12" cy="12" r="3" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <path d="M8 10l-2-1v2l2-1M16 10l2-1v2l-2-1" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <div className="about-hero-feature-text">
+                    <div className="about-hero-feature-title">Leader</div>
+                    <div className="about-hero-feature-date">Winter 2023</div>
+                  </div>
+                </div>
+                
+                <div className="about-hero-feature-card">
+                  <div className="about-hero-feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Person at desk with speech bubble */}
+                      <circle cx="12" cy="8" r="2.5" stroke="white" strokeWidth="1.5" fill="none"/>
+                      <path d="M7 18v-1a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v1" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <rect x="6" y="14" width="12" height="2" rx="1" fill="white"/>
+                      <path d="M14 10h4a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2l-2 2v-2" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                  <div className="about-hero-feature-text">
+                    <div className="about-hero-feature-title">Best support</div>
+                    <div className="about-hero-feature-date">Winter 2023</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
