@@ -86,7 +86,7 @@
 }
 
 .navbar-menu li a.active {
-  color: #00ff88;
+  color: #5AB14C;
   position: relative;
 }
 
@@ -97,7 +97,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: #00ff88;
+  background: #5AB14C;
   border-radius: 2px;
 }
 

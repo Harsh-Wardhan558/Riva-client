@@ -97,7 +97,7 @@ const Home = () => {
   return (
     <div className="home">
       <section className="hero">
-        <div className="hero-background"></div>
+        <div className="hero-background" style={{ backgroundImage: "url('/Section (2).png')" }}></div>
         <div className="hero-overlay"></div>
         <div className="hero-container">
           {/* Profile Cards positioned around */}
@@ -170,15 +170,14 @@ const Home = () => {
                         <div className="play-ripple-inner"></div>
                         <button className="play-button" onClick={(e) => { e.stopPropagation(); handlePlay(); }} aria-label="Play video">
                           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="40" fill="#00ff88" opacity="0.9"/>
-                            <path d="M32 28L32 52L52 40L32 28Z" fill="#1a3d2e"/>
+                            <circle cx="40" cy="40" r="35" fill="none" stroke="white" strokeWidth="2" strokeDasharray="5,5"/>
+                            <path d="M32 28L32 52L52 40L32 28Z" fill="#00ff88"/>
                           </svg>
                         </button>
                       </div>
                       <p className="watch-video-text">Watch Video</p>
                     </div>
                   )}
-                  <div className="video-badge">RIVA</div>
                 </div>
               </div>
             </div>
@@ -217,35 +216,45 @@ const Home = () => {
 
       <section className="features">
         <div className="container">
-          <h2 className="section-title">Why Choose Riva Recruitment?</h2>
+          <h2 className="section-title">Why Choose Us</h2>
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">
-                <AnimatedIcon type="search" />
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 8C20 8 16 10 16 14V18C16 20.2 17.8 22 20 22H28C30.2 22 32 20.2 32 18V14C32 10 28 8 24 8Z" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                  <path d="M16 38C16 36.9 16.9 36 18 36H30C31.1 36 32 36.9 32 38V40C32 42.2 30.2 44 28 44H20C17.8 44 16 42.2 16 40V38Z" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                  <path d="M12 20L14 22L18 18" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M30 20L32 22L36 18" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M20 30L22 32L26 28" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
-              <h3>Smart Job Matching</h3>
-              <p>Our advanced algorithm matches you with jobs that fit your skills and preferences</p>
+              <h3>Retain Top Talent</h3>
+              <p>Providing clear career paths and growth opportunities is key to retaining top talent.</p>
+              <a href="#" className="learn-more-link">Learn More →</a>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
-                <AnimatedIcon type="lightning" />
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 4L8 10V22C8 30 12 37.2 18 41.6C20 43.2 22 44 24 44C26 44 28 43.2 30 41.6C36 37.2 40 30 40 22V10L24 4Z" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                  <path d="M18 24L22 28L30 20" stroke="#1a1a1a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
               </div>
-              <h3>Quick Application</h3>
-              <p>Apply to multiple jobs with just a few clicks. Save time and focus on what matters</p>
+              <h3>Stay Compliant</h3>
+              <p>Educate employees about compliance requirements through regular training</p>
+              <a href="#" className="learn-more-link">Learn More →</a>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
-                <AnimatedIcon type="target" />
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 36L16 28L24 32L32 20L40 24" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="16" cy="28" r="2" fill="#1a1a1a"/>
+                  <circle cx="24" cy="32" r="2" fill="#1a1a1a"/>
+                  <circle cx="32" cy="20" r="2" fill="#1a1a1a"/>
+                </svg>
               </div>
-              <h3>Top Companies</h3>
-              <p>Access exclusive job postings from leading companies in your industry</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <AnimatedIcon type="chart" />
-              </div>
-              <h3>Career Insights</h3>
-              <p>Get valuable insights about salary ranges, company culture, and growth opportunities</p>
+              <h3>Improve Employee</h3>
+              <p>Invest in employee training development programs enhance skill and knowledge.</p>
+              <a href="#" className="learn-more-link">Learn More →</a>
             </div>
           </div>
         </div>

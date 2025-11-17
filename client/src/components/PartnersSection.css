@@ -1,67 +1,40 @@
 .partners-section {
-  padding: 5rem 2rem;
-  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+  padding: 3rem 2rem 5rem;
+  background: #ffffff;
   position: relative;
-  margin-top: 0;
+  margin-top: -120px;
   margin-bottom: 0;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 10;
 }
 
 .partners-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.3), transparent);
+  display: none;
 }
 
 .partners-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.3), transparent);
+  display: none;
 }
 
 .partners-card {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 4rem 3rem;
+  border-radius: 0;
+  padding: 3rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
   gap: 2rem;
-  box-shadow: 
-    0 4px 30px rgba(0, 0, 0, 0.08),
-    0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.4s ease;
 }
 
 .partners-card::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(26, 61, 46, 0.05));
-  border-radius: 16px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.partners-card:hover::before {
-  opacity: 1;
+  display: none;
 }
 
 .partner-logo-wrapper {
@@ -88,7 +61,7 @@
   transform: translateX(-50%) scaleX(0);
   width: 60%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #00ff88, transparent);
+  background: linear-gradient(90deg, transparent, #5AB14C, transparent);
   transition: transform 0.4s ease;
   border-radius: 2px;
 }
@@ -96,7 +69,7 @@
 .partner-logo-wrapper:hover {
   opacity: 1;
   transform: translateY(-3px) scale(1.03);
-  background: rgba(0, 255, 136, 0.03);
+  background: rgba(90, 177, 76, 0.03);
 }
 
 .partner-logo-wrapper:hover::after {
@@ -112,13 +85,13 @@
   position: relative;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
-  background: rgba(0, 255, 136, 0.05);
+  background: rgba(90, 177, 76, 0.05);
   flex-shrink: 0;
 }
 
 .partner-logo-wrapper:hover .partner-prefix {
-  color: #00ff88;
-  background: rgba(0, 255, 136, 0.1);
+  color: #5AB14C;
+  background: rgba(90, 177, 76, 0.1);
   transform: scale(1.1);
 }
 
@@ -158,11 +131,11 @@
 }
 
 .partner-logo-wrapper:hover .partner-underline {
-  text-decoration-color: #00ff88;
+  text-decoration-color: #5AB14C;
 }
 
 .partner-logo-wrapper:hover .partner-text {
-  color: #00ff88;
+  color: #5AB14C;
 }
 
 @media (max-width: 968px) {
