@@ -9,24 +9,6 @@ const HowItWorks = () => {
   const talentsSteps = [
     {
       number: 1,
-      title: 'Sign up, It\'s Free!',
-      description: 'Our team will set up your account and help you build job to easy-to-use web dashboard.'
-    },
-    {
-      number: 2,
-      title: 'Post jobs in minutes',
-      description: 'Create and post anywhere from 1-100 job openings with just a few clicks. customize your own.'
-    },
-    {
-      number: 3,
-      title: 'Review Your Staff',
-      description: 'View bios, reviews, and rosters before workers arrive on the job, and post reviews and pay, effortlessly.'
-    }
-  ]
-
-  const businessSteps = [
-    {
-      number: 1,
       title: 'Create Your Profile',
       description: 'Sign up and create your professional profile. Showcase your skills, experience, and qualifications.'
     },
@@ -39,6 +21,24 @@ const HowItWorks = () => {
       number: 3,
       title: 'Get Hired',
       description: 'Connect with employers, attend interviews, and land your dream job with our support.'
+    }
+  ]
+
+  const businessSteps = [
+    {
+      number: 1,
+      title: 'Sign up, It\'s Free!',
+      description: 'Our team will set up your account and help you build job to easy-to-use web dashboard.'
+    },
+    {
+      number: 2,
+      title: 'Post jobs in minutes',
+      description: 'Create and post anywhere from 1-100 job openings with just a few clicks. customize your own.'
+    },
+    {
+      number: 3,
+      title: 'Review Your Staff',
+      description: 'View bios, reviews, and rosters before workers arrive on the job, and post reviews and pay, effortlessly.'
     }
   ]
 

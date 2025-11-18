@@ -4,7 +4,6 @@ import StatsSection from '../components/StatsSection'
 import IndustriesSection from '../components/IndustriesSection'
 import HowItWorks from '../components/HowItWorks'
 import LatestNews from '../components/LatestNews'
-import ContactForm from '../components/ContactForm'
 import PartnersSection from '../components/PartnersSection'
 import AnimatedIcon from '../components/AnimatedIcon'
 import './Home.css'
@@ -147,6 +146,8 @@ const Home = () => {
           <div className="video-content-grid">
             <div className="video-column">
               <div className="video-frame-wrapper">
+                <div className="video-background-image video-background-image-1"></div>
+                <div className="video-background-image video-background-image-2"></div>
                 <div className="video-frame-layer"></div>
                 <div className="video-frame-layer-2"></div>
                 <div className="video-container" onClick={handleVideoClick}>
@@ -220,13 +221,7 @@ const Home = () => {
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M24 8C20 8 16 10 16 14V18C16 20.2 17.8 22 20 22H28C30.2 22 32 20.2 32 18V14C32 10 28 8 24 8Z" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                  <path d="M16 38C16 36.9 16.9 36 18 36H30C31.1 36 32 36.9 32 38V40C32 42.2 30.2 44 28 44H20C17.8 44 16 42.2 16 40V38Z" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                  <path d="M12 20L14 22L18 18" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M30 20L32 22L36 18" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M20 30L22 32L26 28" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <img src="/partners/review.png" alt="Review" className="feature-icon-image" />
               </div>
               <h3>Retain Top Talent</h3>
               <p>Providing clear career paths and growth opportunities is key to retaining top talent.</p>
@@ -245,12 +240,7 @@ const Home = () => {
             </div>
             <div className="feature-card">
               <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 36L16 28L24 32L32 20L40 24" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <circle cx="16" cy="28" r="2" fill="#1a1a1a"/>
-                  <circle cx="24" cy="32" r="2" fill="#1a1a1a"/>
-                  <circle cx="32" cy="20" r="2" fill="#1a1a1a"/>
-                </svg>
+                <img src="/partners/growth.png" alt="Growth" className="feature-icon-image" />
               </div>
               <h3>Improve Employee</h3>
               <p>Invest in employee training development programs enhance skill and knowledge.</p>
@@ -265,8 +255,6 @@ const Home = () => {
       <HowItWorks />
 
       <LatestNews />
-
-      <ContactForm />
 
       <section className="cta">
         <div className="container">

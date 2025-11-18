@@ -4,31 +4,28 @@ const PartnersSection = () => {
   const partners = [
     {
       name: 'The Telegraph',
-      text: 'The Telegraph',
-      style: 'serif'
+      image: '/partners/the-telegraph.png',
+      alt: 'The Telegraph'
     },
     {
       name: 'Warner Bros. Discovery',
-      text: 'WARNER BROS. DISCOVERY',
-      style: 'sans-serif',
-      prefix: 'WB'
+      image: '/partners/warner-bros-discovery.png',
+      alt: 'Warner Bros. Discovery'
     },
     {
       name: 'Net-A-Porter',
-      text: 'NET-A-PORTER',
-      style: 'sans-serif'
+      image: '/partners/net-a-porter.png',
+      alt: 'Net-A-Porter'
     },
     {
       name: 'BrandStudio',
-      text: 'BrandStudio',
-      style: 'sans-serif',
-      prefix: 'T'
+      image: '/partners/brandstudio.png',
+      alt: 'BrandStudio'
     },
     {
       name: 'Highsnobiety',
-      text: 'HIGHSNOBIETY',
-      style: 'sans-serif',
-      underline: true
+      image: '/partners/highsnobiety.png',
+      alt: 'Highsnobiety'
     }
   ]
 
@@ -38,14 +35,19 @@ const PartnersSection = () => {
         <div className="partners-card">
           {partners.map((partner, index) => (
             <div key={index} className="partner-logo-wrapper">
-              {partner.prefix && (
-                <span className="partner-prefix">{partner.prefix}</span>
-              )}
-              <span 
-                className={`partner-text partner-${partner.style} ${partner.underline ? 'partner-underline' : ''}`}
-              >
-                {partner.text}
-              </span>
+              <img 
+                src={partner.image} 
+                alt={partner.alt}
+                className="partner-logo-image"
+                onError={(e) => {
+                  // Fallback to text if image fails to load
+                  e.target.style.display = 'none'
+                  const fallback = document.createElement('span')
+                  fallback.className = 'partner-text partner-sans-serif'
+                  fallback.textContent = partner.name
+                  e.target.parentNode.appendChild(fallback)
+                }}
+              />
             </div>
           ))}
         </div>

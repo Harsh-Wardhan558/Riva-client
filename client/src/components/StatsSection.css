@@ -1,6 +1,6 @@
 .stats-section {
   padding: 6rem 0 0;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 50%, #ffffff 100%);
+  background: #ffffff;
   position: relative;
   overflow: hidden;
   width: 100vw;
@@ -10,7 +10,7 @@
 }
 
 .stats-section:hover {
-  background: linear-gradient(135deg, #fafafa 0%, #f0f7ff 50%, #fafafa 100%);
+  background: #ffffff;
 }
 
 .stats-cards {
@@ -35,19 +35,19 @@
 }
 
 .stat-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(0, 255, 136, 0.2);
+  transform: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   border-color: #5AB14C;
-  background: linear-gradient(135deg, #ffffff 0%, #f0fff4 100%);
+  background: white;
 }
 
 .stat-card:hover .stat-number {
-  color: #5AB14C;
-  transform: scale(1.1);
+  color: #2c3e50;
+  transform: none;
 }
 
 .stat-card:hover .stat-label {
-  color: #2c3e50;
+  color: #7f8c8d;
 }
 
 .stat-number {

@@ -50,7 +50,7 @@ const IndustriesSection = () => {
     <section className="industries-section">
       <div className="container">
         <div className="industries-header">
-          <span className="industries-tag">8 Industries</span>
+          <span className="industries-tag">Industries</span>
           <h2 className="industries-title">Industries Served</h2>
         </div>
         <div className="industries-grid">
@@ -64,6 +64,7 @@ const IndustriesSection = () => {
             </div>
           ))}
         </div>
+        <p className="industries-subtitle">and more</p>
       </div>
     </section>
   )

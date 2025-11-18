@@ -1,6 +1,10 @@
 .how-it-works-section {
   padding: 7rem 2rem;
   background: #0f281f;
+  background-image: url('/Section (2).png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -129,7 +133,7 @@
 }
 
 .step-card {
-  background: #1a3d2e;
+  background: #2a4d3e;
   padding: 3rem 2.5rem;
   border-radius: 20px;
   text-align: center;
@@ -223,7 +227,7 @@
 }
 
 .step-card:hover .step-number {
-  color: #1a3d2e;
+  color: #ffffff;
 }
 
 .step-card.active .step-number {
@@ -231,7 +235,7 @@
 }
 
 .step-card.active:hover .step-number {
-  color: #1a3d2e;
+  color: #ffffff;
 }
 
 .step-title {

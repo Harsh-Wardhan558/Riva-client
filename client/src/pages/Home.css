@@ -1,5 +1,6 @@
 .home {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .hero {
@@ -7,11 +8,13 @@
   min-height: 90vh;
   display: flex;
   align-items: center;
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: visible;
   color: white;
   margin-bottom: 0;
   background: transparent;
   padding-bottom: 150px;
+  width: 100%;
 }
 
 .hero-background {
@@ -44,6 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .hero-content {
@@ -403,6 +407,7 @@
   position: relative;
   margin-top: 0;
   overflow: hidden;
+  width: 100%;
 }
 
 .video-section::before {
@@ -441,6 +446,40 @@
   filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.15));
 }
 
+.video-background-image {
+  position: absolute;
+  background-image: url('/partners/vdo.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.4;
+  filter: blur(1px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.video-background-image-1 {
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  transform: translateZ(-35px) translateX(15px) translateY(-8px) rotate(-2deg) scale(0.95);
+}
+
+.video-background-image-2 {
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  transform: translateZ(-25px) translateX(8px) translateY(-4px) rotate(1.5deg) scale(0.92);
+  opacity: 0.35;
+}
+
 .video-frame-layer {
   position: absolute;
   top: -15px;
@@ -452,6 +491,7 @@
   z-index: 0;
   transform: translateZ(-25px);
   opacity: 0.8;
+  max-width: calc(100% + 30px);
 }
 
 .video-frame-layer-2 {
@@ -465,6 +505,7 @@
   z-index: 0;
   transform: translateZ(-15px);
   opacity: 0.6;
+  max-width: calc(100% + 16px);
 }
 
 .video-container {
@@ -661,26 +702,28 @@
 
 .about-tag {
   display: inline-block;
-  background: #5AB14C;
-  color: #ffffff !important;
+  background: #C8E6C9;
+  color: #1a3d2e !important;
   padding: 0.5rem 1.25rem;
-  border-radius: 50px;
+  border-radius: 8px;
   font-size: 0.75rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border: none;
+  border: 1px solid #81C784;
   box-shadow: none;
   transition: all 0.3s ease;
   align-self: flex-start;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .about-tag:hover {
-  background: #5AB14C;
+  background: #C8E6C9;
   transform: none;
   box-shadow: none;
-  color: #ffffff !important;
+  color: #1a3d2e !important;
+  border-color: #66BB6A;
 }
 
 .video-section-title {
@@ -890,6 +933,15 @@
   transition: all 0.3s ease 0.1s;
 }
 
+.feature-icon-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease 0.1s;
+}
+
 .feature-card:hover .feature-icon {
   transform: scale(1.05);
 }
@@ -907,6 +959,10 @@
 .feature-card:hover .feature-icon svg path:not([fill]) {
   fill: none;
   stroke: #ffffff;
+}
+
+.feature-card:hover .feature-icon-image {
+  filter: brightness(0) invert(1);
 }
 
 @keyframes iconBounce {
@@ -1166,6 +1222,7 @@
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.12));
   }
 
+  .video-background-image,
   .video-frame-layer,
   .video-frame-layer-2 {
     display: none;
