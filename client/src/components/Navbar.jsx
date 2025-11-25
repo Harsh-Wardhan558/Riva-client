@@ -123,6 +123,11 @@ const Navbar = () => {
             <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
           </li>
 
+          {/* Home1 - Single */}
+          <li>
+            <Link to="/home1" className={location.pathname === '/home1' ? 'active' : ''}>Home1</Link>
+          </li>
+
           {/* Services with Dropdown */}
           <li 
             className="nav-item-dropdown"
@@ -224,6 +229,10 @@ const Navbar = () => {
               <ul className="mobile-nav-list">
                 <li>
                   <Link to="/" onClick={closeMobileMenu} className={location.pathname === '/' ? 'active' : ''}>Home</Link>
+                </li>
+
+                <li>
+                  <Link to="/home1" onClick={closeMobileMenu} className={location.pathname === '/home1' ? 'active' : ''}>Home1</Link>
                 </li>
 
                 <li className="mobile-nav-item-dropdown">

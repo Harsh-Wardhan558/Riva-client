@@ -1,3 +1,4 @@
+/* Navbar starts as relative (normal flow) - no overlap */
 .navbar {
   background: white;
   padding: 1.2rem 0;
@@ -10,14 +11,17 @@
   border-bottom: 1px solid #e5e5e5;
   width: 100%;
   transition: all 0.3s ease;
+  margin: 0;
 }
 
+/* When scrolled, navbar becomes fixed and overlays content */
 .navbar.scrolled {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
   right: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
 }
 
 .navbar-container {
@@ -625,3 +629,4 @@
     margin-left: 0.75rem;
   }
 }
+

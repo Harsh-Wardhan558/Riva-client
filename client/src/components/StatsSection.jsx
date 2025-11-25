@@ -7,10 +7,10 @@ const StatsSection = () => {
   const sectionRef = useRef(null)
 
   const stats = [
-    { number: 12, suffix: 'k', label: 'Freelance Workers', isKFormat: true },
-    { number: 95, suffix: '%', label: 'Jobs Fulfillment Rate', isKFormat: false },
-    { number: 12, suffix: 'k+', label: 'Jobs Filled', isKFormat: true },
-    { number: 825, suffix: '+', label: 'Satisfied Businesses', isKFormat: false }
+    { number: 15, suffix: 'k+', label: 'Healthcare Professionals Placed', isKFormat: true },
+    { number: 98, suffix: '%', label: 'Placement Success Rate', isKFormat: false },
+    { number: 8, suffix: 'k+', label: 'Engineering & Scientific Talent', isKFormat: true },
+    { number: 500, suffix: '+', label: 'Leading Companies Served', isKFormat: false }
   ]
 
   useEffect(() => {
@@ -104,7 +104,7 @@ const StatsSection = () => {
               <span key={index} className="flowing-item">
                 <span className="flowing-word">{word}</span>
                 <svg className="flowing-star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 0L9.8 5.5L15.5 5.5L10.9 8.9L12.7 14.4L8 11L3.3 14.4L5.1 8.9L0.5 5.5L6.2 5.5L8 0Z" fill="#00ff88"/>
+                  <path d="M8 0L9.8 5.5L15.5 5.5L10.9 8.9L12.7 14.4L8 11L3.3 14.4L5.1 8.9L0.5 5.5L6.2 5.5L8 0Z" fill="#5AB14C"/>
                 </svg>
               </span>
             ))}

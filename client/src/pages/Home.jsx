@@ -4,7 +4,6 @@ import StatsSection from '../components/StatsSection'
 import IndustriesSection from '../components/IndustriesSection'
 import HowItWorks from '../components/HowItWorks'
 import LatestNews from '../components/LatestNews'
-import ContactForm from '../components/ContactForm'
 import PartnersSection from '../components/PartnersSection'
 import AnimatedIcon from '../components/AnimatedIcon'
 import './Home.css'
@@ -45,32 +44,32 @@ const Home = () => {
   }
   const profileCards = [
     {
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-      role: 'Waiter',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      role: 'Engineer',
       bgColor: '#FFD700',
       tagColor: '#90EE90',
       position: 'top-left',
       size: 'medium'
     },
     {
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-      role: 'Finance',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      role: 'Healthcare',
       bgColor: '#FFB6C1',
       tagColor: '#FFD700',
       position: 'top-right',
       size: 'medium'
     },
     {
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-      role: 'Assistant',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      role: 'Finance',
       bgColor: '#87CEEB',
       tagColor: '#87CEEB',
       position: 'mid-left',
       size: 'small'
     },
     {
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-      role: 'Cleaner',
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      role: 'Technology',
       bgColor: '#FFA500',
       tagColor: '#FFA500',
       position: 'mid-right',
@@ -78,15 +77,15 @@ const Home = () => {
     },
     {
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-      role: 'Painter',
+      role: 'Management',
       bgColor: '#D2B48C',
       tagColor: '#FFFFFF',
       position: 'bottom-left',
       size: 'small'
     },
     {
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-      role: 'Nurse',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+      role: 'Education',
       bgColor: '#DDA0DD',
       tagColor: '#DDA0DD',
       position: 'bottom-right',
@@ -97,7 +96,7 @@ const Home = () => {
   return (
     <div className="home">
       <section className="hero">
-        <div className="hero-background"></div>
+        <div className="hero-background" style={{ backgroundImage: "url('/Section (2).png')" }}></div>
         <div className="hero-overlay"></div>
         <div className="hero-container">
           {/* Profile Cards positioned around */}
@@ -147,6 +146,8 @@ const Home = () => {
           <div className="video-content-grid">
             <div className="video-column">
               <div className="video-frame-wrapper">
+                <div className="video-background-image video-background-image-1"></div>
+                <div className="video-background-image video-background-image-2"></div>
                 <div className="video-frame-layer"></div>
                 <div className="video-frame-layer-2"></div>
                 <div className="video-container" onClick={handleVideoClick}>
@@ -170,15 +171,14 @@ const Home = () => {
                         <div className="play-ripple-inner"></div>
                         <button className="play-button" onClick={(e) => { e.stopPropagation(); handlePlay(); }} aria-label="Play video">
                           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="40" fill="#00ff88" opacity="0.9"/>
-                            <path d="M32 28L32 52L52 40L32 28Z" fill="#1a3d2e"/>
+                            <circle cx="40" cy="40" r="35" fill="none" stroke="white" strokeWidth="2" strokeDasharray="5,5"/>
+                            <path d="M32 28L32 52L52 40L32 28Z" fill="#00ff88"/>
                           </svg>
                         </button>
                       </div>
                       <p className="watch-video-text">Watch Video</p>
                     </div>
                   )}
-                  <div className="video-badge">RIVA</div>
                 </div>
               </div>
             </div>
@@ -217,35 +217,34 @@ const Home = () => {
 
       <section className="features">
         <div className="container">
-          <h2 className="section-title">Why Choose Riva Recruitment?</h2>
+          <h2 className="section-title">Why Choose Us</h2>
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">
-                <AnimatedIcon type="search" />
+                <img src="/partners/review.png" alt="Review" className="feature-icon-image" />
               </div>
-              <h3>Smart Job Matching</h3>
-              <p>Our advanced algorithm matches you with jobs that fit your skills and preferences</p>
+              <h3>Retain Top Talent</h3>
+              <p>Providing clear career paths and growth opportunities is key to retaining top talent.</p>
+              <a href="#" className="learn-more-link">Learn More →</a>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
-                <AnimatedIcon type="lightning" />
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 4L8 10V22C8 30 12 37.2 18 41.6C20 43.2 22 44 24 44C26 44 28 43.2 30 41.6C36 37.2 40 30 40 22V10L24 4Z" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                  <path d="M18 24L22 28L30 20" stroke="#1a1a1a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
               </div>
-              <h3>Quick Application</h3>
-              <p>Apply to multiple jobs with just a few clicks. Save time and focus on what matters</p>
+              <h3>Stay Compliant</h3>
+              <p>Educate employees about compliance requirements through regular training</p>
+              <a href="#" className="learn-more-link">Learn More →</a>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
-                <AnimatedIcon type="target" />
+                <img src="/partners/growth.png" alt="Growth" className="feature-icon-image" />
               </div>
-              <h3>Top Companies</h3>
-              <p>Access exclusive job postings from leading companies in your industry</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <AnimatedIcon type="chart" />
-              </div>
-              <h3>Career Insights</h3>
-              <p>Get valuable insights about salary ranges, company culture, and growth opportunities</p>
+              <h3>Improve Employee</h3>
+              <p>Invest in employee training development programs enhance skill and knowledge.</p>
+              <a href="#" className="learn-more-link">Learn More →</a>
             </div>
           </div>
         </div>
@@ -256,8 +255,6 @@ const Home = () => {
       <HowItWorks />
 
       <LatestNews />
-
-      <ContactForm />
 
       <section className="cta">
         <div className="container">

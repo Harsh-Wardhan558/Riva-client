@@ -143,13 +143,20 @@ class SmoothScrollEngine {
       this.wrapper.appendChild(this.container)
       body.appendChild(this.wrapper)
       
-      // Add navbar back to body AFTER wrapper (outside scroll container)
+      // Add navbar back to body BEFORE wrapper (so it's in normal flow initially)
       // Position will be controlled by CSS class (.scrolled)
       if (navbar) {
-        body.appendChild(navbar)
+        // Insert navbar before wrapper to maintain normal flow
+        if (body.firstChild) {
+          body.insertBefore(navbar, body.firstChild)
+        } else {
+          body.appendChild(navbar)
+        }
         navbar.style.zIndex = '10000'
         navbar.style.width = '100%'
         navbar.style.backgroundColor = 'white'
+        // Ensure navbar is in normal flow initially (not fixed)
+        navbar.style.position = 'relative'
       }
       
       // Listen for scroll to update navbar position
@@ -158,11 +165,16 @@ class SmoothScrollEngine {
           const scrollPosition = this.current || window.pageYOffset || document.documentElement.scrollTop
           if (scrollPosition > 50) {
             navbar.classList.add('scrolled')
+            navbar.style.position = 'fixed'
           } else {
             navbar.classList.remove('scrolled')
+            navbar.style.position = 'relative'
           }
         }
       }
+      
+      // Initialize navbar position on load
+      handleNavbarScroll()
       
       // Update navbar on scroll
       this.navbarScrollHandler = handleNavbarScroll
